@@ -5,7 +5,9 @@
   "url": "https://mistertlibrary.github.io/primarysourcepalooza/",
   "series": "",
   "course": "",
-  "subjects": [],
+  "subjects": [
+    "Social Studies"
+  ],
   "sections": [
     { "title": "Choose a Source!", "anchor": "#picker-title", "keywords": [] },
     { "title": "My Source!", "anchor": "#mysource-title", "keywords": [] },
