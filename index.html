@@ -1,455 +1,414 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" data-size="small" data-font="serif">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Primary Source Palooza! Your Guide to Working with Primary Sources</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
-    /* ── Reset ───────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; overflow: hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary Source Palooza! | WEHS Library Lyceum</title>
+<meta name="description" content="Your Guide to Working with Primary Sources">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WEHS Library Lyceum">
+<meta property="og:title" content="Primary Source Palooza! | WEHS Library Lyceum">
+<meta property="og:description" content="Your Guide to Working with Primary Sources">
+<meta property="og:url" content="https://mistertlibrary.github.io/primarysourcepalooza/">
+<meta property="og:image" content="https://mistertlibrary.github.io/librarylyceum/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/librarylyceum/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/librarylyceum/favicon.png">
+<script>
+(function(){try{var d=document.documentElement;var t=localStorage.getItem("lyceum-theme"),s=localStorage.getItem("lyceum-size"),f=localStorage.getItem("lyceum-font");
+if(t==="dark"||t==="contrast")d.dataset.theme=t;if(s==="medium"||s==="large")d.dataset.size=s;if(f==="sans"||f==="dyslexic")d.dataset.font=f;}catch(e){}})();
+</script>
+<style>
+@font-face{font-family:"Fraunces";font-weight:400;font-display:swap;src:url("/librarylyceum/fonts/fraunces-400.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:700;font-display:swap;src:url("/librarylyceum/fonts/fraunces-700.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:800;font-display:swap;src:url("/librarylyceum/fonts/fraunces-800.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:900;font-display:swap;src:url("/librarylyceum/fonts/fraunces-900.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:500;font-display:swap;src:url("/librarylyceum/fonts/fraunces-500-italic.woff2") format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-weight:400;font-display:swap;src:url("/librarylyceum/fonts/hanken-grotesk-400.woff2") format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-weight:700;font-display:swap;src:url("/librarylyceum/fonts/hanken-grotesk-700.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;font-display:swap;src:url("/librarylyceum/fonts/ibm-plex-mono-600.woff2") format("woff2")}
+@font-face{font-family:"OpenDyslexic";font-weight:400;font-display:swap;src:url("/librarylyceum/fonts/opendyslexic-400.woff2") format("woff2")}
+@font-face{font-family:"OpenDyslexic";font-weight:700;font-display:swap;src:url("/librarylyceum/fonts/opendyslexic-700.woff2") format("woff2")}
 
-    /* ── Variables ───────────────────────────────────────── */
-    :root {
-      --parchment:     #f3e8c4;
-      --parchment-mid: #e6d09a;
-      --parchment-drk: #cfa85c;
-      --ink:           #1a0f06;
-      --ink-mid:       #3a2210;
-      --rubric:        #8b1a1a;
-      --gold:          #c8a030;
-      --azure:         #1e3d6b;
-      --verdigris:     #3d6b4a;
-    }
+:root,:root[data-theme="light"]{
+  --paper:#f7f1e3;--card:#fffbf2;--ink:#1b2333;--ink-soft:#49536e;
+  --accent:#c52122;--accent-soft:#f8dcd9;--line:#cdbf9e;--line-soft:#e8dcc0;
+  --nav:#2f1414;--on-nav:#ffffff;--on-accent:#ffffff;--shadow-col:#2f1414;
+  --s1:#c52122;--s2:#e2650c;--s3:#f2c230;--s4:#237a33;--s5:#2457c5;--s6:#6f3bb0;
+  --o1:#fff;--o2:#1b2333;--o3:#1b2333;--o4:#fff;--o5:#fff;--o6:#fff;
+  --t1:#fbe0de;--t2:#fde6d2;--t3:#fdf3cc;--t4:#dcefdf;--t5:#dde6fa;--t6:#ebe0f7;
+}
+:root[data-theme="dark"]{
+  --paper:#13151d;--card:#1b1e29;--ink:#ece5d5;--ink-soft:#aab0c2;
+  --accent:#ff6b66;--accent-soft:#3a1f1f;--line:#363b49;--line-soft:#1f222d;
+  --nav:#1a0b0b;--on-nav:#ece5d5;--on-accent:#13151d;--shadow-col:#000;
+  --s1:#ff6b66;--s2:#ff9a4d;--s3:#ffd45c;--s4:#6fd17f;--s5:#7fa6ff;--s6:#c49bff;
+  --o1:#13151d;--o2:#13151d;--o3:#13151d;--o4:#13151d;--o5:#13151d;--o6:#13151d;
+  --t1:#3a1f1f;--t2:#3a2a1a;--t3:#38321a;--t4:#1a3320;--t5:#1d2541;--t6:#2c2140;
+}
+:root[data-theme="contrast"]{
+  --paper:#000;--card:#000;--ink:#fff;--ink-soft:#fff;
+  --accent:#ffe400;--accent-soft:#000;--line:#fff;--line-soft:#000;
+  --nav:#000;--on-nav:#fff;--on-accent:#000;--shadow-col:#fff;
+  --s1:#ffe400;--s2:#ffe400;--s3:#ffe400;--s4:#ffe400;--s5:#ffe400;--s6:#ffe400;
+  --o1:#000;--o2:#000;--o3:#000;--o4:#000;--o5:#000;--o6:#000;
+  --t1:#000;--t2:#000;--t3:#000;--t4:#000;--t5:#000;--t6:#000;
+}
+:root{--fs:16px;--body:'Fraunces',Georgia,serif;--display:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+:root[data-size="medium"]{--fs:18px}
+:root[data-size="large"]{--fs:20.5px}
+:root[data-font="sans"]{--body:'Hanken Grotesk',system-ui,sans-serif}
+:root[data-font="dyslexic"]{--body:'OpenDyslexic',sans-serif;--display:'OpenDyslexic',sans-serif;--mono:'OpenDyslexic',monospace}
 
-    /* ── Body ────────────────────────────────────────────── */
-    body {
-      font-family: 'Crimson Text', Georgia, serif;
-      background: var(--parchment-drk);
-      color: var(--ink);
-      display: flex;
-      flex-direction: column;
-    }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--fs);line-height:1.6;
+  background-image:radial-gradient(var(--line-soft) 1.5px,transparent 1.5px);background-size:22px 22px}
+:root[data-theme="contrast"] body{background-image:none}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;text-align:center;overflow-wrap:break-word}
+a{color:var(--accent);text-underline-offset:3px}
+:root[data-theme="contrast"] a{text-decoration:underline}
+.skip-link{position:absolute;left:-999px;top:0;z-index:200;background:var(--accent);color:var(--on-accent);padding:.6rem 1rem;font-weight:700}
+.skip-link:focus{left:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-    /* ── Header ──────────────────────────────────────────── */
-    header {
-      background: var(--ink);
-      color: var(--parchment);
-      text-align: center;
-      padding: 0.5rem 1rem 0.45rem;
-      border-bottom: 3px solid var(--gold);
-      flex-shrink: 0;
-    }
-    header h1 {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.07em;
-      line-height: 1.2;
-    }
-    header .subtitle {
-      font-style: italic;
-      font-size: 0.85rem;
-      color: var(--parchment-mid);
-      margin-top: 0.1rem;
-      letter-spacing: 0.02em;
-    }
+.topbar{background:var(--nav);color:var(--on-nav);text-align:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1rem;border-bottom:3px solid var(--accent)}
+.topbar a{color:var(--on-nav);font-weight:600}
 
-    /* ── Workspace ───────────────────────────────────────── */
-    .workspace { display: flex; flex: 1; overflow: hidden; }
+.preview{max-width:1000px;margin:1rem auto 0;padding:0 16px}
+.preview p{margin:0;border:2px dashed var(--accent);background:var(--accent-soft);border-radius:10px;padding:.6rem 1rem;text-align:center;font-family:var(--mono);font-size:.78rem}
 
-    /* ── Sidebar ─────────────────────────────────────────── */
-    .sidebar {
-      width: 272px;
-      flex-shrink: 0;
-      background: var(--parchment);
-      border-right: 2px solid var(--parchment-drk);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+header.hero{text-align:center;padding:3.2rem 16px 2rem}
+.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;color:var(--accent);font-weight:600}
+header.hero h1{font-size:clamp(2.3rem,8vw,4.8rem);font-weight:900;margin:.2em 0 .1em;letter-spacing:-1px}
+.hero h1 .bang{display:inline-block;color:var(--accent);transform:rotate(8deg)}
+.lead{max-width:600px;margin:0 auto;font-size:1.15rem;color:var(--ink-soft);font-style:italic}
+.confetti{display:flex;justify-content:center;gap:.5rem;margin:1.4rem 0 0}
+.confetti span{width:2.2rem;height:.55rem;border-radius:4px;border:2px solid var(--ink)}
+.confetti span:nth-child(1){background:var(--s1);transform:rotate(-8deg)}.confetti span:nth-child(2){background:var(--s2);transform:rotate(5deg)}
+.confetti span:nth-child(3){background:var(--s3);transform:rotate(-3deg)}.confetti span:nth-child(4){background:var(--s4);transform:rotate(9deg)}
+.confetti span:nth-child(5){background:var(--s5);transform:rotate(-6deg)}.confetti span:nth-child(6){background:var(--s6);transform:rotate(4deg)}
 
-    .sidebar-inner {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0.7rem 0.65rem 0.5rem;
-    }
-    .sidebar-inner::-webkit-scrollbar { width: 5px; }
-    .sidebar-inner::-webkit-scrollbar-track { background: var(--parchment-mid); }
-    .sidebar-inner::-webkit-scrollbar-thumb { background: var(--parchment-drk); border-radius: 2px; }
+.hero{position:relative;max-width:1000px;margin:0 auto}
+.marg{position:absolute;color:var(--accent);pointer-events:none}
+.marg svg{display:block}
+.m-hand{left:2%;top:46%;transform:rotate(-6deg)}
+.m-nb{right:4%;top:22%;font-family:var(--display);font-style:italic;font-weight:500;font-size:1.5rem;transform:rotate(9deg);color:var(--s5)}
+.m-star{right:9%;top:62%;color:var(--s3)}
+.m-brace{left:6%;top:16%;color:var(--s6)}
+.m-squig{display:block;margin:-.2rem auto 0;color:var(--accent)}
+@media (max-width:760px){.m-hand,.m-nb,.m-star,.m-brace{display:none}}
+.stepper{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;list-style:none;padding:0;margin:0 0 .4rem}
+.stepper button{width:100%;height:100%;padding:.5rem .3rem;border:2px solid var(--ink);border-radius:10px;background:var(--t);color:var(--ink);cursor:pointer;font-family:var(--display);font-weight:700;font-size:.82rem;line-height:1.15;box-shadow:3px 3px 0 var(--shadow-col)}
+.stepper .n{display:block;font-family:var(--mono);font-size:.95rem}
+.stepper button[aria-current="step"]{background:var(--c);color:var(--o);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--shadow-col)}
+.stage[hidden]{display:none}
+.nav-row{display:flex;justify-content:space-between;gap:.6rem;margin:1rem 0 0;flex-wrap:wrap}
+.stepper li{min-width:0}.stepper button{overflow-wrap:anywhere;hyphens:auto}
+@media (max-width:640px){.stepper{grid-template-columns:repeat(3,minmax(0,1fr))}.stepper button{font-size:.74rem}}
+section{padding:2.4rem 0;border-top:2px solid var(--line)}
+section h2{font-size:clamp(1.8rem,5vw,2.7rem);font-weight:800;margin:0 0 .3rem}
+.sec-sub{text-align:center;color:var(--ink-soft);max-width:640px;margin:0 auto 1.4rem}
 
-    .sidebar-label {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-size: 0.75rem;
-      text-align: center;
-      color: var(--rubric);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--parchment-mid);
-    }
+.picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.picker button{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:.9rem .5rem;
+  background:var(--card);color:var(--ink);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--shadow-col);
+  font-family:var(--display);font-weight:700;font-size:.95rem;line-height:1.2;cursor:pointer;transition:transform .08s ease}
+.picker button svg{width:34px;height:34px;color:var(--c)}
+:root:not([data-theme="dark"]):not([data-theme="contrast"]) .picker li:nth-child(6n+3) button:not([aria-pressed="true"]) svg,:root:not([data-theme="dark"]):not([data-theme="contrast"]) .m-star{color:#8a6a00}
+.picker li:nth-child(6n+1) button{--c:var(--s1);--t:var(--t1);--o:var(--o1)}.picker li:nth-child(6n+2) button{--c:var(--s2);--t:var(--t2);--o:var(--o2)}
+.picker li:nth-child(6n+3) button{--c:var(--s3);--t:var(--t3);--o:var(--o3)}.picker li:nth-child(6n+4) button{--c:var(--s4);--t:var(--t4);--o:var(--o4)}
+.picker li:nth-child(6n+5) button{--c:var(--s5);--t:var(--t5);--o:var(--o5)}.picker li:nth-child(6n+6) button{--c:var(--s6);--t:var(--t6);--o:var(--o6)}
+.picker button:hover,.picker button:focus-visible{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:6px 6px 0 var(--shadow-col);background:var(--t)}
+.picker button[aria-pressed="true"]{background:var(--c);color:var(--o);border-color:var(--ink)}
+.picker button[aria-pressed="true"] svg{color:var(--o)}
 
-    .doc-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:1.3rem 1.4rem;margin:1rem 0;box-shadow:6px 6px 0 var(--shadow-col)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+label{display:block;font-weight:700;margin:.9rem 0 .3rem}
+textarea,input[type="text"]{width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:8px;padding:.55rem .7rem}
+textarea{resize:vertical;min-height:4.4rem}
+textarea:focus,input:focus{outline:3px solid var(--accent);outline-offset:1px}
 
-    .doc-item {
-      cursor: pointer;
-      padding: 0.42rem 0.55rem;
-      border: 1px solid transparent;
-      border-left: 3px solid transparent;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.45rem;
-      transition: background 0.1s, border-color 0.1s;
-      border-radius: 1px;
-    }
-    .doc-item:hover {
-      background: var(--parchment-mid);
-      border-left-color: var(--parchment-drk);
-    }
-    .doc-item.active {
-      background: var(--ink);
-      color: var(--parchment);
-      border-color: var(--gold);
-    }
-    .doc-item.active .doc-num { color: var(--gold); }
-    .doc-item:focus { outline: 2px solid var(--gold); outline-offset: -2px; }
+.empty{text-align:center;color:var(--ink-soft);font-style:italic;padding:1rem 0}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;margin:1.6rem 0;box-shadow:6px 6px 0 var(--shadow-col);overflow:hidden}
+.stage-head{background:var(--t);border-bottom:2px solid var(--ink);padding:1rem 1.2rem;text-align:center}
+.stage-num{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--c);color:var(--o);font-family:var(--mono);font-weight:600;border:2px solid var(--ink)}
+.stage h3{font-size:clamp(1.4rem,4vw,1.9rem);font-weight:800;margin:.4rem 0 .2rem}
+.stage-purpose{margin:0 auto;max-width:620px;color:var(--ink-soft)}
+.stage-body{padding:.4rem 1.4rem 1.3rem}
+.q{margin:1rem 0}
+.q label{font-weight:700}
+.type-tag{display:block;width:max-content;max-width:100%;margin:1.4rem auto .2rem;padding:.2rem .7rem;border-radius:6px;background:var(--c);color:var(--o);font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase}
+.s1{--c:var(--s1);--t:var(--t1);--o:var(--o1)}.s2{--c:var(--s2);--t:var(--t2);--o:var(--o2)}.s3{--c:var(--s3);--t:var(--t3);--o:var(--o3)}
+.s4{--c:var(--s4);--t:var(--t4);--o:var(--o4)}.s5{--c:var(--s5);--t:var(--t5);--o:var(--o5)}.s6{--c:var(--s6);--t:var(--t6);--o:var(--o6)}
+.print-ans{display:none}
+.stepper li:nth-child(1) button{--c:var(--s1);--t:var(--t1);--o:var(--o1)}.stepper li:nth-child(2) button{--c:var(--s2);--t:var(--t2);--o:var(--o2)}.stepper li:nth-child(3) button{--c:var(--s3);--t:var(--t3);--o:var(--o3)}.stepper li:nth-child(4) button{--c:var(--s4);--t:var(--t4);--o:var(--o4)}.stepper li:nth-child(5) button{--c:var(--s5);--t:var(--t5);--o:var(--o5)}.stepper li:nth-child(6) button{--c:var(--s6);--t:var(--t6);--o:var(--o6)}
 
-    .doc-num {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-size: 0.73rem;
-      color: var(--rubric);
-      min-width: 1.7rem;
-      padding-top: 0.1rem;
-      flex-shrink: 0;
-    }
-    .doc-title { font-size: 0.93rem; line-height: 1.3; }
+.btn-row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0 .4rem}
+.btn{font-family:var(--body);font-weight:700;font-size:.98rem;cursor:pointer;background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);border-radius:8px;padding:.55rem 1.1rem;box-shadow:3px 3px 0 var(--shadow-col)}
+.btn.ghost{background:var(--card);color:var(--ink)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--shadow-col)}
+.status{text-align:center;min-height:1.4em;font-family:var(--mono);font-size:.8rem;color:var(--ink-soft)}
+#copyFallback{display:none;margin-top:1rem}
+#copyFallback textarea{min-height:12rem;font-family:var(--mono);font-size:.82rem}
 
-    .sidebar-footer {
-      flex-shrink: 0;
-      height: 88px;
-      position: relative;
-      border-top: 1px solid var(--parchment-mid);
-      background: var(--parchment);
-      overflow: hidden;
-    }
+footer{text-align:center;margin-top:2rem}
+.footer-main{background:var(--nav);color:var(--on-nav);padding:2rem 16px}
+.footer-main p{margin:.2rem 0}.footer-main a{color:var(--on-nav)}
+.footer-main .big{font-family:var(--display);font-size:1.5rem;font-weight:800}
+.credits{padding:1.2rem 16px 5.5rem;font-size:.86rem;color:var(--ink-soft)}
 
-    /* ── Viewer panel ────────────────────────────────────── */
-    .viewer-panel {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      background: #5a4a38;
-    }
+.a11y-toggle{position:fixed;right:1rem;bottom:1rem;z-index:120;width:52px;height:52px;border-radius:50%;border:3px solid var(--shadow-col);background:var(--accent);color:var(--on-accent);cursor:pointer;font-family:var(--display);font-weight:800;font-size:1.1rem;box-shadow:4px 4px 0 var(--shadow-col)}
+.a11y-panel{position:fixed;right:1rem;bottom:5rem;z-index:120;width:min(300px,calc(100vw - 2rem));background:var(--card);color:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:1rem;box-shadow:6px 6px 0 var(--shadow-col)}
+.a11y-group{border:0;margin:0 0 .8rem;padding:0;min-width:0}
+.a11y-group legend{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--ink-soft);margin-bottom:.35rem}
+.opts{display:flex;gap:.4rem;flex-wrap:wrap}
+.opts button{flex:1;min-width:0;padding:.4rem .2rem;border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:7px;cursor:pointer;font-family:var(--body);font-size:.84rem}
+.opts button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 
-    .viewer-bar {
-      background: var(--ink-mid);
-      color: var(--parchment);
-      padding: 0.42rem 0.85rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid var(--gold);
-      flex-shrink: 0;
-      gap: 1rem;
-    }
-    .viewer-doc-title {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-style: italic;
-      font-size: 1rem;
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .viewer-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
-
-    .btn {
-      font-family: 'Crimson Text', Georgia, serif;
-      font-size: 0.85rem;
-      padding: 0.22rem 0.65rem;
-      border: 1px solid var(--gold);
-      background: transparent;
-      color: var(--parchment);
-      cursor: pointer;
-      letter-spacing: 0.02em;
-      transition: background 0.1s, color 0.1s;
-    }
-    .btn:hover { background: var(--gold); color: var(--ink); }
-    .btn:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
-
-    .viewer-placeholder {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: var(--parchment-mid);
-      gap: 1.1rem;
-      padding: 2rem;
-      text-align: center;
-    }
-    .viewer-placeholder p {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--ink-mid);
-    }
-    .scene-float { animation: float 5s ease-in-out infinite; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-7px); }
-    }
-
-    .viewer-frame { flex: 1; border: none; width: 100%; display: block; }
-  </style>
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:640px){.fields{grid-template-columns:1fr}.stage-body{padding:.2rem 1rem 1rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{
+  .topbar,.preview,.confetti,.marg,.m-squig,.stepper,.nav-row,#picker-section,.btn-row,.status,#copyFallback,.a11y-toggle,.a11y-panel,.skip-link,.footer-main{display:none!important}
+  :root{--paper:#fff;--card:#fff;--ink:#000;--ink-soft:#333;--shadow-col:#fff;--t1:#fff;--t2:#fff;--t3:#fff;--t4:#fff;--t5:#fff;--t6:#fff;--o:#fff;--o1:#fff;--o2:#fff;--o3:#fff;--o4:#fff;--o5:#fff;--o6:#fff;--s1:#000;--s2:#000;--s3:#000;--s4:#000;--s5:#000;--s6:#000}
+  body{background:#fff;font-size:11pt}
+  header.hero{padding:0 0 .5rem}header.hero h1{font-size:24pt}
+  section{border:0;padding:.5rem 0}
+  .stage,.panel{box-shadow:none;break-inside:auto}
+  .stage[hidden]{display:block!important}
+  .q{break-inside:avoid}
+  textarea,input[type="text"]{display:none}
+  .print-ans{display:block;min-height:3.2em;border-bottom:1px solid #999;white-space:pre-wrap;padding:.2rem 0}
+  .credits{padding-bottom:0}
+}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar"><a href="/librarylyceum/guides.html">WEHS Library Lyceum</a> research guides presents...</div>
 
-<header>
-  <h1>Primary Source Palooza! Your Guide to Working with Primary Sources</h1>
-  <p class="subtitle">West Essex High School Library | Mr. Thompson</p>
+<header class="hero">
+  <span class="marg m-brace" aria-hidden="true"><svg width="26" height="110" viewBox="0 0 26 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 4c-10 0-10 6-10 20s0 22-8 31c8 9 8 17 8 31s0 20 10 20"/></svg></span>
+  <span class="marg m-nb" aria-hidden="true">N.B.</span>
+  <span class="marg m-hand" aria-hidden="true"><svg width="74" height="40" viewBox="0 0 74 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h14c4 0 6-3 9-6s7-4 9-1-2 6-2 6h36c3 0 4 4 0 4H42"/><path d="M42 17h6c3 0 3 4 0 4h-6M42 21h5c3 0 3 4 0 4h-5M42 25h4c3 0 3 4 0 4H24c-5 0-8-4-8-8v-5"/><path d="M2 14v16h14"/></svg></span>
+  <span class="marg m-star" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M17 3v28M5 10l24 14M29 10L5 24"/></svg></span>
+  <div class="kicker">A Library Research Guide</div>
+  <h1>Primary Source Palooza<span class="bang">!</span></h1>
+  <p class="lead">Your Guide to Working with Primary Sources</p>
+  <svg class="m-squig" width="220" height="14" viewBox="0 0 220 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8c12-8 22 6 34 0s22-6 34 0 22 6 34 0 22-6 34 0 22 6 34 0 22-6 34 0"/></svg>
+  <div class="confetti" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 </header>
 
-<div class="workspace">
+<main id="main"><div class="wrap">
 
-  <aside class="sidebar">
+<section id="picker-section" aria-labelledby="picker-title">
+  <h2 id="picker-title">Choose a Source!</h2>
+  <ul class="picker" id="picker"></ul>
+</section>
 
-    <!-- Vine scroll border -->
-    <svg viewBox="0 0 272 26" xmlns="http://www.w3.org/2000/svg"
-         style="flex-shrink:0;display:block;width:100%;" aria-hidden="true">
-      <path d="M5,13 Q22,3 42,13 Q62,23 82,13 Q102,3 122,13 Q142,23 162,13 Q182,3 202,13 Q222,23 242,13 Q258,6 268,13"
-            fill="none" stroke="#8b1a1a" stroke-width="1.4" opacity="0.5"/>
-      <ellipse cx="42"  cy="13" rx="5" ry="3" fill="#3d6b4a" opacity="0.6" transform="rotate(-25 42 13)"/>
-      <ellipse cx="82"  cy="13" rx="5" ry="3" fill="#3d6b4a" opacity="0.6" transform="rotate(25 82 13)"/>
-      <ellipse cx="122" cy="13" rx="5" ry="3" fill="#3d6b4a" opacity="0.6" transform="rotate(-25 122 13)"/>
-      <ellipse cx="162" cy="13" rx="5" ry="3" fill="#3d6b4a" opacity="0.6" transform="rotate(25 162 13)"/>
-      <ellipse cx="202" cy="13" rx="5" ry="3" fill="#3d6b4a" opacity="0.6" transform="rotate(-25 202 13)"/>
-      <circle cx="62"  cy="8"  r="2.4" fill="#8b1a1a" opacity="0.5"/>
-      <circle cx="102" cy="18" r="2.4" fill="#8b1a1a" opacity="0.5"/>
-      <circle cx="142" cy="8"  r="2.4" fill="#8b1a1a" opacity="0.5"/>
-      <circle cx="182" cy="18" r="2.4" fill="#8b1a1a" opacity="0.5"/>
-      <circle cx="222" cy="8"  r="2.4" fill="#8b1a1a" opacity="0.5"/>
-    </svg>
-
-    <div class="sidebar-inner">
-      <p class="sidebar-label">Documents &amp; Guides</p>
-      <ul class="doc-list" id="doc-list"></ul>
+<section aria-labelledby="mysource-title">
+  <h2 id="mysource-title">My Source!</h2>
+  <div class="panel">
+    <div class="fields">
+      <div class="q"><label for="f-title">Title or description</label><input type="text" id="f-title" data-key="f-title"><div class="print-ans"></div></div>
+      <div class="q"><label for="f-creator">Creator</label><input type="text" id="f-creator" data-key="f-creator"><div class="print-ans"></div></div>
+      <div class="q"><label for="f-date">Date</label><input type="text" id="f-date" data-key="f-date"><div class="print-ans"></div></div>
+      <div class="q"><label for="f-where">Where I found it</label><input type="text" id="f-where" data-key="f-where"><div class="print-ans"></div></div>
     </div>
+    <p class="sr-only" id="type-live" aria-live="polite"></p>
+  </div>
+</section>
 
-    <!-- Sidebar footer: rabbit (left) + snail (right) -->
-    <div class="sidebar-footer">
+<section aria-labelledby="analysis-title">
+  <h2 id="analysis-title">Analysis!</h2>
+  <ol class="stepper" id="stepper" aria-label="Stages"></ol>
+  <div id="stages"></div>
+  <div class="btn-row">
+    <button class="btn" type="button" id="copyBtn">Copy my answers</button>
+    <button class="btn ghost" type="button" id="printBtn">Print my work</button>
+    <button class="btn ghost" type="button" id="clearBtn">Start over</button>
+  </div>
+  <p class="status" id="status" aria-live="polite"></p>
+  <div id="copyFallback">
+    <label for="copyText">Your browser blocked copying. Your answers are selected below; press Ctrl+C (or Cmd+C).</label>
+    <textarea id="copyText" readonly></textarea>
+  </div>
+</section>
 
-      <!-- Rabbit holding a scroll -->
-      <svg width="58" height="75" viewBox="0 0 45 58" xmlns="http://www.w3.org/2000/svg"
-           style="position:absolute;bottom:0;left:6px;" aria-hidden="true">
-        <ellipse cx="15" cy="11" rx="4"   ry="10.5" fill="#d4b878" stroke="#3a2210" stroke-width="1.2"/>
-        <ellipse cx="28" cy="9"  rx="4"   ry="10.5" fill="#d4b878" stroke="#3a2210" stroke-width="1.2"/>
-        <ellipse cx="15" cy="11" rx="2.2" ry="7.5"  fill="#d09090" opacity="0.6"/>
-        <ellipse cx="28" cy="9"  rx="2.2" ry="7.5"  fill="#d09090" opacity="0.6"/>
-        <circle cx="21" cy="25" r="10.5" fill="#d4b878" stroke="#3a2210" stroke-width="1.2"/>
-        <circle cx="17" cy="23" r="2"   fill="#1a0f06"/>
-        <circle cx="25" cy="23" r="2"   fill="#1a0f06"/>
-        <circle cx="17.6" cy="22.4" r="0.7" fill="white"/>
-        <circle cx="25.6" cy="22.4" r="0.7" fill="white"/>
-        <ellipse cx="21" cy="28" rx="2.4" ry="1.4" fill="#d09090" opacity="0.75"/>
-        <path d="M19,30 Q21,32 23,30" fill="none" stroke="#3a2210" stroke-width="0.8"/>
-        <line x1="8"  y1="27" x2="18" y2="27.5" stroke="#3a2210" stroke-width="0.6" opacity="0.65"/>
-        <line x1="8"  y1="29" x2="18" y2="29.5" stroke="#3a2210" stroke-width="0.6" opacity="0.65"/>
-        <line x1="24" y1="27.5" x2="34" y2="27" stroke="#3a2210" stroke-width="0.6" opacity="0.65"/>
-        <line x1="24" y1="29.5" x2="34" y2="29" stroke="#3a2210" stroke-width="0.6" opacity="0.65"/>
-        <ellipse cx="21" cy="43" rx="9.5" ry="11" fill="#d4b878" stroke="#3a2210" stroke-width="1.2"/>
-        <path d="M12,39 Q5,38 4,44" fill="none" stroke="#3a2210" stroke-width="1.5" stroke-linecap="round"/>
-        <rect x="0.5" y="42" width="7" height="10" rx="1.5" fill="#f3e8c4" stroke="#3a2210" stroke-width="1"/>
-        <line x1="2.5" y1="45" x2="6" y2="45" stroke="#8b1a1a" stroke-width="0.7"/>
-        <line x1="2.5" y1="47" x2="6" y2="47" stroke="#8b1a1a" stroke-width="0.7"/>
-        <line x1="2.5" y1="49" x2="5.5" y2="49" stroke="#8b1a1a" stroke-width="0.7"/>
-        <path d="M30,39 Q37,38 36,44" fill="none" stroke="#3a2210" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="31" cy="46" r="4" fill="#e8d4a0" stroke="#3a2210" stroke-width="1"/>
-        <ellipse cx="15" cy="55" rx="5.5" ry="2.5" fill="#d4b878" stroke="#3a2210" stroke-width="1"/>
-        <ellipse cx="27" cy="55" rx="5.5" ry="2.5" fill="#d4b878" stroke="#3a2210" stroke-width="1"/>
-      </svg>
+</div></main>
 
-      <!-- Snail -->
-      <svg width="76" height="60" viewBox="0 0 76 60" xmlns="http://www.w3.org/2000/svg"
-           style="position:absolute;bottom:0;right:4px;" aria-hidden="true">
-        <circle cx="46" cy="30" r="20" fill="#d4b878" stroke="#3a2210" stroke-width="1.6"/>
-        <path d="M46,30 m0,-13 a13,13 0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="1.3"/>
-        <path d="M46,30 m0,-6.5 a6.5,6.5 0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="1.1"/>
-        <path d="M46,30 m0,-2 a2,2 0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="0.9"/>
-        <path d="M38,18 Q34,22 32,30" fill="none" stroke="#c8a030" stroke-width="0.9" opacity="0.45"/>
-        <path d="M28,34 Q17,31 9,26" fill="none" stroke="#3a2210" stroke-width="3.2" stroke-linecap="round"/>
-        <circle cx="7" cy="24" r="7.5" fill="#d4b878" stroke="#3a2210" stroke-width="1.3"/>
-        <circle cx="5"  cy="22" r="1.5" fill="#1a0f06"/>
-        <circle cx="10" cy="22" r="1.5" fill="#1a0f06"/>
-        <line x1="5"  y1="17" x2="2"  y2="10" stroke="#3a2210" stroke-width="1.2"/>
-        <circle cx="2" cy="10" r="2.2" fill="#3a2210"/>
-        <line x1="10" y1="17" x2="13" y2="10" stroke="#3a2210" stroke-width="1.2"/>
-        <circle cx="13" cy="10" r="2.2" fill="#3a2210"/>
-        <path d="M7,31 Q24,46 46,47 Q60,47 68,43" fill="#c8a030" stroke="#3a2210" stroke-width="1.1" opacity="0.6"/>
-      </svg>
+<footer>
+  <div class="footer-main">
+    <p class="big">West Essex High School Library Media Center</p>
+    <p><a href="/librarylyceum/">WEHS Library Lyceum</a></p>
+  </div>
+  <p class="credits">Approach adapted from ABC-CLIO's <i>Source Analysis Guides</i>; the National Archives' <a href="https://www.archives.gov/education/lessons/worksheets">Document Analysis Worksheets</a> and <a href="https://www.archives.gov/files/education/lessons/document-analysis/english/understanding-perspective-in-primary-sources.pdf">Understanding Perspective in Primary Sources</a>; and the Library of Congress's <a href="https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/guides/">Teacher's Guides and Analysis Tool</a>.</p>
+</footer>
 
-    </div>
-  </aside>
-
-  <main class="viewer-panel">
-
-    <div class="viewer-bar" id="viewer-bar" style="display:none;">
-      <span class="viewer-doc-title" id="viewer-doc-title"></span>
-      <div class="viewer-actions">
-        <button class="btn" onclick="openCurrent()" title="Opens PDF in a new tab for printing">
-          Print / Open &#8599;
-        </button>
-      </div>
-    </div>
-
-    <!-- Placeholder: the immortal knight-versus-snail -->
-    <div class="viewer-placeholder" id="viewer-placeholder">
-      <svg class="scene-float" width="380" height="190" viewBox="0 0 380 190"
-           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
-        <line x1="10" y1="168" x2="370" y2="168" stroke="#5a3a1a" stroke-width="1" opacity="0.25"/>
-        <line x1="120" y1="168" x2="118" y2="158" stroke="#3d6b4a" stroke-width="1.6"/>
-        <line x1="126" y1="168" x2="128" y2="156" stroke="#3d6b4a" stroke-width="1.6"/>
-        <line x1="170" y1="168" x2="168" y2="160" stroke="#3d6b4a" stroke-width="1.6"/>
-        <line x1="176" y1="168" x2="178" y2="159" stroke="#3d6b4a" stroke-width="1.6"/>
-        <line x1="210" y1="168" x2="212" y2="157" stroke="#3d6b4a" stroke-width="1.6"/>
-
-        <!-- Knight: plume -->
-        <path d="M76,58 Q66,42 60,34 Q72,40 76,58" fill="#8b1a1a" opacity="0.85"/>
-        <path d="M76,58 Q82,40 90,33 Q87,44 76,58" fill="#c8a030" opacity="0.75"/>
-        <!-- Knight: helmet -->
-        <circle cx="76" cy="70" r="16" fill="#c0c0a8" stroke="#3a2210" stroke-width="1.6"/>
-        <rect x="64" y="68" width="20" height="4.5" rx="1" fill="#1a0f06" opacity="0.75"/>
-        <rect x="68" y="84" width="16" height="7" rx="1" fill="#b0b098" stroke="#3a2210" stroke-width="1"/>
-        <!-- Knight: shield -->
-        <path d="M44,90 L44,126 Q44,136 52,137 Q60,136 60,126 L60,90 Z"
-              fill="#8b1a1a" stroke="#3a2210" stroke-width="1.3"/>
-        <line x1="52" y1="93"  x2="52"  y2="133" stroke="#f3e8c4" stroke-width="1.2" opacity="0.9"/>
-        <line x1="45" y1="112" x2="59"  y2="112" stroke="#f3e8c4" stroke-width="1.2" opacity="0.9"/>
-        <!-- Knight: body -->
-        <rect x="60" y="90" width="34" height="42" rx="3" fill="#c0c0a8" stroke="#3a2210" stroke-width="1.3"/>
-        <path d="M60,108 L77,100 L94,108" fill="none" stroke="#8b1a1a" stroke-width="1" opacity="0.5"/>
-        <!-- Knight: lance -->
-        <line x1="88" y1="88" x2="215" y2="125" stroke="#5a3a1a" stroke-width="2.8" stroke-linecap="round"/>
-        <polygon points="88,88 74,78 88,105" fill="#8b1a1a" opacity="0.85"/>
-        <polygon points="215,125 208,118 220,133" fill="#a0a090"/>
-        <!-- Knight: legs -->
-        <rect x="63" y="132" width="13" height="26" fill="#c0c0a8" stroke="#3a2210" stroke-width="1.1"/>
-        <rect x="79" y="132" width="13" height="26" fill="#c0c0a8" stroke="#3a2210" stroke-width="1.1"/>
-        <ellipse cx="70" cy="159" rx="10" ry="4.5" fill="#a8a890" stroke="#3a2210" stroke-width="1"/>
-        <ellipse cx="86" cy="159" rx="10" ry="4.5" fill="#a8a890" stroke="#3a2210" stroke-width="1"/>
-
-        <!-- Snail: shell -->
-        <circle cx="302" cy="102" r="44" fill="#d4b878" stroke="#3a2210" stroke-width="2"/>
-        <path d="M302,102 m0,-28 a28,28 0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="1.6"/>
-        <path d="M302,102 m0,-14 a14,14 0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="1.3"/>
-        <path d="M302,102 m0,-6  a6,6  0 1,0 0.01,0" fill="none" stroke="#3a2210" stroke-width="1"/>
-        <circle cx="302" cy="102" r="3" fill="#3a2210"/>
-        <path d="M285,68 Q277,78 273,96" fill="none" stroke="#c8a030" stroke-width="1.4" opacity="0.45"/>
-        <path d="M294,64 Q288,72 285,84" fill="none" stroke="#c8a030" stroke-width="0.9" opacity="0.3"/>
-        <!-- Snail: body -->
-        <path d="M260,115 Q240,108 228,94 Q222,82 228,72"
-              fill="none" stroke="#3a2210" stroke-width="6" stroke-linecap="round"/>
-        <path d="M260,115 Q240,108 228,94 Q222,82 228,73"
-              fill="none" stroke="#e8d4a0" stroke-width="3" stroke-linecap="round"/>
-        <!-- Snail: head -->
-        <circle cx="233" cy="67" r="16" fill="#d4b878" stroke="#3a2210" stroke-width="1.6"/>
-        <circle cx="226" cy="63" r="3"   fill="#1a0f06"/>
-        <circle cx="238" cy="63" r="3"   fill="#1a0f06"/>
-        <circle cx="227"   cy="62"   r="1.1" fill="white"/>
-        <circle cx="239"   cy="62"   r="1.1" fill="white"/>
-        <path d="M227,75 Q233,73 239,75" fill="none" stroke="#3a2210" stroke-width="1.3"/>
-        <!-- Snail: antennae -->
-        <line x1="225" y1="54" x2="214" y2="38" stroke="#3a2210" stroke-width="1.7"/>
-        <circle cx="214" cy="38" r="3.5" fill="#3a2210"/>
-        <line x1="237" y1="53" x2="240" y2="36" stroke="#3a2210" stroke-width="1.7"/>
-        <circle cx="240" cy="36" r="3.5" fill="#3a2210"/>
-        <!-- Snail: shield (a snail-upon-snail device, recursive glory) -->
-        <path d="M212,70 L212,94 Q212,102 220,103 Q228,102 228,94 L212,70 Z"
-              fill="#1e3d6b" stroke="#3a2210" stroke-width="1.4"/>
-        <circle cx="220" cy="84" r="5"   fill="none" stroke="#f3e8c4" stroke-width="0.9"/>
-        <circle cx="220" cy="84" r="2.5" fill="none" stroke="#f3e8c4" stroke-width="0.7"/>
-        <circle cx="220" cy="84" r="1"   fill="#f3e8c4" opacity="0.8"/>
-        <!-- Snail: foot -->
-        <path d="M232,135 Q265,155 302,157 Q328,157 346,150"
-              fill="#c8a030" stroke="#3a2210" stroke-width="1.3" opacity="0.6"/>
-
-      </svg>
-      <p>Choose a guide from the left to begin.</p>
-    </div>
-
-    <iframe class="viewer-frame" id="viewer-frame" style="display:none;"
-            title="Primary Source Guide Viewer"></iframe>
-
-  </main>
+<button class="a11y-toggle" type="button" aria-expanded="false" aria-controls="a11y-panel" aria-label="Reading preferences">Aa</button>
+<div class="a11y-panel" id="a11y-panel" role="group" aria-label="Reading preferences" hidden>
+  <fieldset class="a11y-group"><legend>Text size</legend><div class="opts" data-dim="size"><button type="button" data-v="small">Small</button><button type="button" data-v="medium">Medium</button><button type="button" data-v="large">Large</button></div></fieldset>
+  <fieldset class="a11y-group"><legend>Theme</legend><div class="opts" data-dim="theme"><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button><button type="button" data-v="contrast">Contrast</button></div></fieldset>
+  <fieldset class="a11y-group"><legend>Typeface</legend><div class="opts" data-dim="font"><button type="button" data-v="serif">Serif</button><button type="button" data-v="sans">Sans</button><button type="button" data-v="dyslexic">OpenDyslexic</button></div></fieldset>
 </div>
 
 <script>
-  const DOCUMENTS = [
-    { title: "Art or Artifact",                       file: "Art or Artifact.pdf" },
-    { title: "Audio",                                 file: "Audio.pdf" },
-    { title: "Cartoon",                               file: "Cartoon.pdf" },
-    { title: "Government or Legal Document",          file: "Government or Legal Document.pdf" },
-    { title: "Letter or Telegram",                    file: "Letter or Telegram.pdf" },
-    { title: "Map",                                   file: "Map.pdf" },
-    { title: "Newspaper",                             file: "Newspaper.pdf" },
-    { title: "Oral History",                          file: "Oral History.pdf" },
-    { title: "Photograph",                            file: "Photograph.pdf" },
-    { title: "Speech",                                file: "Speech.pdf" },
-    { title: "Statistics",                            file: "Statistics.pdf" },
-    { title: "Video",                                 file: "Video.pdf" },
-    { title: "Working with Primary Sources Combined", file: "Working with Primary Sources Combined.pdf" },
-    { title: "Written Document",                      file: "Written Document.pdf" },
-  ];
-  const PDF_FOLDER = "Working with Primary Sources/";
-  // =========================================================
+(function(){
+var SPINE=[
+ {t:"First Impressions",p:"Withhold judgment and try to see the source through neutral eyes.",q:[
+  "What kind of source is it?",
+  "What do you first notice about it?",
+  "How would you describe it to somebody who couldn't see or hear it?"]},
+ {t:"Observation",p:"Take your time breaking the source down into parts. Describe what you find, but don't try to make sense of it yet. Interpretation and analysis come later.",q:[
+  "Take inventory! Which people, places, actions, or objects do you find? If it's an audiovisual source, what images and sounds stand out?",
+  "Can you spot any small but intriguing details? What's most interesting about this source?",
+  "Does anything stand out as unexpected or unexplained?",
+  "Can you make any inferences about the source's origin? Look for labels, signatures, stamps, captions, and other clues."]},
+ {t:"Contextualization",p:"Sources don't exist in a vacuum! Can you place it in space-time?",q:[
+  "Can you identify who created it? Was it a person, a group, some other entity?",
+  "When and where was it made?",
+  "What was happening in that place at that time?",
+  "Who was the intended audience? Who was meant to read, hear, or see it?"]},
+ {t:"Interpretation",p:"Think critically about the source's purpose and authorial perspective. Ground all your assertions with specific evidence.",q:[
+  "Why was this source made? How do you know?",
+  "Do any details hint at the creator's background or point of view?",
+  "Was the creator trying to persuade, record, instruct, justify, sell, entertain, or something else entirely?",
+  "What does the source omit? What information and/or perspectives are left out?",
+  "How might its intended audience have reacted when it was created? How are you reacting today?"]},
+ {t:"Using Sources as Evidence",p:"Establish potential uses and inherent limitations of the source.",q:[
+  "What can you learn from this source that you might not learn anywhere else?",
+  "Do any claims merit further scrutiny? Which details should you fact-check? Do other sources support or contradict them?",
+  "What other perspectives would help you better understand this source?",
+  "What perspective do <i>you</i> bring to the source? How does it shape your analysis?",
+  "How does this source connect to larger themes, debates, or changes over time?"]},
+ {t:"Further Questions",p:"Stop analyzing and get back to researching!",q:[
+  "Do you fully understand this source? (Hint: the answer is probably no!)",
+  "What do you still wonder about: who, what, when, where, why, how?",
+  "What questions does this source leave unanswered?",
+  "What more do you want to know? Where might you find out?"]}
+];
+var I={
+ art:'<rect x="4" y="5" width="24" height="22" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M4 23l7-7 5 5 4-4 8 8"/>',
+ artifact:'<path d="M10 4h12M12 4v5l-5 7v8a4 4 0 004 4h10a4 4 0 004-4v-8l-5-7V4"/><path d="M7 18h18"/>',
+ cartoon:'<path d="M5 7h22v13H14l-6 5v-5H5z"/><path d="M10 12h12M10 15h8"/>',
+ chart:'<path d="M5 27V5M5 27h22"/><rect x="9" y="16" width="4" height="8"/><rect x="16" y="10" width="4" height="14"/><rect x="23" y="13" width="3" height="11"/>',
+ gov:'<path d="M4 12L16 5l12 7z"/><path d="M7 12v11M12 12v11M20 12v11M25 12v11M4 26h24"/>',
+ letter:'<rect x="4" y="8" width="24" height="17" rx="2"/><path d="M4 9l12 9 12-9"/>',
+ map:'<path d="M4 8l7-3 10 3 7-3v19l-7 3-10-3-7 3z"/><path d="M11 5v19M21 8v19"/>',
+ newspaper:'<rect x="4" y="5" width="20" height="22" rx="1"/><path d="M24 10h4v14a3 3 0 01-3 3"/><path d="M8 10h12M8 14h5M8 18h5M8 22h12"/><rect x="15" y="14" width="5" height="5"/>',
+ oral:'<rect x="12" y="4" width="8" height="14" rx="4"/><path d="M8 15a8 8 0 0016 0M16 23v5M11 28h10"/>',
+ photo:'<rect x="4" y="9" width="24" height="17" rx="2"/><path d="M11 9l2-4h6l2 4"/><circle cx="16" cy="17" r="5"/>',
+ poster:'<path d="M7 4h18v24H7z"/><path d="M11 9h10M16 13l2 5h-4zM11 23h10"/>',
+ sheet:'<path d="M12 23V7l14-3v16"/><circle cx="9" cy="23" r="3"/><circle cx="23" cy="20" r="3"/><path d="M12 11l14-3"/>',
+ sound:'<path d="M5 13v6h5l7 6V7l-7 6z"/><path d="M21 12a5 5 0 010 8M24 9a9 9 0 010 14"/>',
+ speech:'<path d="M10 26h12M16 26v-8"/><rect x="11" y="4" width="10" height="14" rx="5"/><path d="M7 11v2a9 9 0 0018 0v-2"/>',
+ video:'<rect x="4" y="8" width="18" height="16" rx="2"/><path d="M22 13l6-4v14l-6-4z"/>',
+ written:'<path d="M8 4h11l6 6v18H8z"/><path d="M19 4v6h6M12 15h9M12 19h9M12 23h6"/>'
+};
+var TYPES=[
+ ["art", "Art", [[0, "What kind of artwork is it? A painting, drawing, print, mural, sculpture, or something else?"], [0, "Does it have a title? What does the title suggest?"], [1, "What medium and materials did the artist use?"], [1, "What might the colors, figures, or objects represent?"], [2, "Does it depict the artist's own time or a different one?"], [3, "Was it made for beauty, for entertainment, or for some practical use?"], [3, "What message do you think the artist wanted to send?"]], "final"],
+ ["artifact", "Artifact", [[0, "What is it made of? Wood, metal, stone, pottery, glass, fabric, paper, plastic, or something else?"], [1, "Describe its shape, color, texture, size, weight, and condition. Does it have moving parts or writing on it?"], [2, "Who used it? What makes you think so?"], [3, "What was it used for? What makes you think so?"], [3, "What does it reveal about the people who made and used it? About the technology of their time?"], [4, "What object fills a similar role today? What does the comparison tell you?"]], "final"],
+ ["cartoon", "Cartoon", [[0, "Does it have a title or caption?"], [1, "Are there labels, speech bubbles, or other words? Which seem most important?"], [1, "Which images are symbols? What might they stand for?"], [2, "What publication ran it?"], [3, "Whom or what is the cartoonist targeting?"], [3, "How does the cartoonist persuade? Look for exaggeration, irony, symbolism, and humor."], [4, "Is the argument convincing? How might a cartoonist with a different perspective depict the same issue?"]], "final"],
+ ["chart", "Chart, Graph, or Statistics", [[0, "Is it a chart, graph, table, or something else?"], [1, "What numbers and kinds of information do you see? Where are the largest and smallest values?"], [1, "Is there a key, legend, or note explaining how to read it?"], [2, "Who gathered the data? Where did it come from?"], [2, "What time, place, and/or topic does the data cover?"], [3, "What does it highlight? What seems minimized or hidden?"], [3, "Does it show change over time? What about differences between places or groups?"], [4, "How reliable is the data? How else could it be presented? How would that change its message?"]], "final"],
+ ["gov", "Government or Legal Document", [[0, "What kind of document is it? A law, court ruling, treaty, proclamation, patent, report, or something else?"], [2, "What government body or authority issued it? What power did that body hold?"], [2, "How was it distributed? Who would have encountered it?"], [2, "Was it routine or unusual? Was it the first of its kind?"], [3, "What does it require, permit, or forbid?"], [3, "Is the language administrative, persuasive, or both?"]], "final"],
+ ["letter", "Letter or Telegram", [[1, "Is it handwritten or typed? Look for stamps, postmarks, letterhead, or notes in the margins."], [2, "Who wrote it? Who received it? Was it meant for one reader or many?"], [2, "How was it sent? Did it reach its intended reader?"], [2, "Is it personal, political, or official? Formal or informal?"], [3, "Why might the writer have chosen a letter or telegram over some other medium?"], [3, "What is its tone? Does the writer make a request or expect a reply?"], [3, "Is the writer urging action, inaction, or something else?"]], "final"],
+ ["map", "Map", [[0, "What kind of map is it? Political, physical, military, survey, transportation, or something else?"], [0, "Does it have a title, scale, compass, or legend?"], [1, "What places are shown? What is labeled?"], [1, "What do the symbols and colors stand for?"], [2, "When was it made? Does it show its own era or an earlier one?"], [3, "Does it show change over time or differences between regions?"], [4, "How does it compare to a contemporary map of the same place? What is missing or inaccurate?"]], "final"],
+ ["newspaper", "Newspaper", [[0, "Is it a news story, editorial, advertisement, letter to the editor, or something else?"], [1, "How is the page arranged? What appears beside the articles?"], [1, "What details reveal when and where it was published?"], [2, "Which newspaper published it? Who read that paper?"], [3, "Why was this story considered newsworthy?"], [3, "Do its contents seem objective? Are any news articles slanted? What positions do editorials take?"], [4, "Is the coverage thorough? What does the page reveal about what mattered to its readers?"]], "final"],
+ ["oral", "Oral History", [[0, "Is it an audio recording, a video, or a transcript? An interview or a conversation?"], [1, "Do you hear unfamiliar words, accents, or background sounds?"], [1, "Is there an introduction, narration, images, or music?"], [2, "Who recorded or sponsored it? Why?"], [3, "What story is the speaker telling? What do they hope listeners will take away?"], [3, "Does the story seem more personal or historical?"], [4, "Memory is protean. How reliable is this account? How could you check details?"]], "final"],
+ ["photo", "Photograph", [[0, "What kind of photograph is it? Portrait, landscape, aerial, event, candid, posed, documentary?"], [0, "Can you tell what photographic technology it uses? (Some options include daguerreotype, ambrotype, tintype, cyanotype, albumen print, carte-de-visite, stereoscopic photograph, lantern slide, instant color film, and digital photograph.)"], [0, "Is there a caption? What does it add?"], [1, "How are people and objects arranged? What is the setting?"], [2, "Was it taken by an amateur or a professional?"], [3, "Was the scene natural or staged by the photographer? How can you tell?"], [3, "Does it simply document a scene? Or does it tell a story?"], [4, "What might lie outside the frame?"]], "final"],
+ ["poster", "Poster", [[1, "Is there a printed slogan, question, or instruction? Does it identify its creator?"], [1, "What colors and symbols stand out?"], [2, "Where would people have seen this poster?"], [3, "Does it persuade mainly through words, images, or both?"], [3, "What does it want viewers to feel, believe, or do?"]], "final"],
+ ["sheet", "Sheet Music or Song", [[1, "What do you see on the cover? Describe its design and images."], [1, "What names or places appear in the lyrics?"], [1, "If you know the melody (or can read sheet music), sing or hum it. What do you notice about how it sounds?"], [2, "Who composed it? Who was meant to sing or play it?"], [3, "What does the cover suggest about the music and its audience?"], [3, "If there are no lyrics, what instruments was it written for?"]], "final"],
+ ["sound", "Sound Recording", [[0, "What is the title? What do you expect to hear?"], [0, "What kind of recording is it? A speech, performance, interview, broadcast, testimony, podcast, or something else?"], [1, "What do you hear? Narration, music, sound effects, background noise?"], [1, "What is the mood or tone?"], [2, "Was it made by an amateur or a professional?"], [3, "Was it recorded as events happened or was it staged?"], [3, "How did its creator want listeners to respond?"]], "final"],
+ ["speech", "Speech", [[0, "Do you have a recording, a transcript, or both? If both, do they differ? How and why?"], [2, "What was the occasion and setting? What did the audience expect?"], [2, "Was it formal or informal? Routine or unusual?"], [3, "What is the tone? What kind of language does the speaker use?"], [3, "Is the speaker urging action, inaction, or something else?"]], "final"],
+ ["video", "Video or Film", [[0, "What is the title? What do you expect to see?"], [0, "What kind of film is it? A newsreel, documentary, propaganda, training film, commercial, or something else?"], [1, "Is it live action or animation? Color or black and white? Are there special effects?"], [1, "Do you hear narration or music? Do you see words on-screen?"], [1, "What is the mood? How long is it?"], [2, "Was it filmed on location or on a set?"], [3, "Was the scene natural or staged?"], [3, "What feelings or ideas did its creators want to convey?"]], "final"],
+ ["written", "Written or Printed Document", [[0, "What kind of document is it? A report, diary, pamphlet, book, record, or something else?"], [1, "Is it handwritten, typed, or printed? Is it all by one hand? Look for stamps and marks."], [1, "How much can you read? What looks strange or unfamiliar?"], [1, "What do you notice about the page itself: its size, paper, and layout?"], [2, "Was it one copy or many? How was it distributed?"], [2, "What tools and materials were used to make it?"], [3, "Summarize it in one sentence. What arguments does it make? Quote evidence."]], "final"]
+];
+var KEY="palooza-v1",state={type:null,a:{}},cur=0;
+try{var raw=localStorage.getItem(KEY);if(raw){var o=JSON.parse(raw);if(o&&typeof o==="object"){state.type=o.type||null;state.a=o.a||{};}}}catch(e){}
+var status=document.getElementById("status");
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));status.textContent="Saved on this device";}catch(e){status.textContent="Saving is unavailable in this browser. Copy or print your work before leaving.";}}
+var tmr;function save(){clearTimeout(tmr);tmr=setTimeout(persist,350);}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function strip(s){return s.replace(/<[^>]+>/g,"");}
+function typeById(id){for(var i=0;i<TYPES.length;i++)if(TYPES[i][0]===id)return TYPES[i];return null;}
 
-  const ROMAN = [
-    "I","II","III","IV","V","VI","VII","VIII",
-    "IX","X","XI","XII","XIII","XIV","XV",
-    "XVI","XVII","XVIII","XIX","XX"
-  ];
-  let currentIndex = null;
+var picker=document.getElementById("picker");
+TYPES.forEach(function(t){
+  var li=document.createElement("li");
+  li.innerHTML='<button type="button" data-type="'+t[0]+'" aria-pressed="false"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+I[t[0]]+'</svg><span>'+esc(t[1])+'</span></button>';
+  picker.appendChild(li);
+});
+picker.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;state.type=b.getAttribute("data-type");save();render();
+  document.getElementById("type-live").textContent="Questions added for "+typeById(state.type)[1];});
 
-  function buildList() {
-    const list = document.getElementById('doc-list');
-    DOCUMENTS.forEach((doc, i) => {
-      const li      = document.createElement('li');
-      li.className  = 'doc-item';
-      li.tabIndex   = 0;
-      li.innerHTML  = `<span class="doc-num">${ROMAN[i] || (i + 1)}.</span>`
-                    + `<span class="doc-title">${doc.title}</span>`;
-      li.addEventListener('click',   ()  => openDoc(i));
-      li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openDoc(i); });
-      list.appendChild(li);
-    });
-  }
+function field(key,label){
+  var id="q-"+key,v=state.a[key]||"";
+  return '<div class="q"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" data-key="'+key+'" rows="3">'+esc(v)+'</textarea><div class="print-ans" aria-hidden="true"></div></div>';
+}
+function render(){
+  picker.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-type")===state.type));});
+  var t=typeById(state.type),h="";
+  if(!t)h+='<p class="empty">Choose a source type above to add questions written for it.</p>';
+  SPINE.forEach(function(s,i){
+    h+='<article class="stage s'+(i+1)+'" aria-labelledby="st'+i+'"'+(i===cur?'':' hidden')+'><div class="stage-head"><span class="stage-num" aria-hidden="true">'+(i+1)+'</span><h3 id="st'+i+'">'+s.t+'</h3><p class="stage-purpose">'+s.p+'</p></div><div class="stage-body">';
+    s.q.forEach(function(q,j){h+=field("s"+i+"q"+j,q);});
+    if(t){var extra=t[2].filter(function(x){return x[0]===i;});
+      if(extra.length){h+='<span class="type-tag">For your '+esc(t[1].toLowerCase())+'</span>';
+        extra.forEach(function(x,k){h+=field(t[0]+"-"+i+"-"+k,esc(x[1]));});}}
+    h+='<div class="nav-row">'+(i>0?'<button class="btn ghost" type="button" data-go="'+(i-1)+'">Back: '+SPINE[i-1].t+'</button>':'<span></span>')+(i<5?'<button class="btn" type="button" data-go="'+(i+1)+'">Next: '+SPINE[i+1].t+'</button>':'')+'</div>';
+    h+='</div></article>';
+  });
+  document.getElementById("stages").innerHTML=h;
+  var st="";SPINE.forEach(function(s,i){st+='<li><button type="button" data-go="'+i+'"'+(i===cur?' aria-current="step"':'')+'><span class="n">'+(i+1)+'</span>'+s.t+'</button></li>';});
+  document.getElementById("stepper").innerHTML=st;
+}
+function go(i,focus){cur=i;
+  document.querySelectorAll(".stage").forEach(function(a,j){a.hidden=j!==i;});
+  document.querySelectorAll("#stepper button").forEach(function(b,j){if(j===i)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current");});
+  if(focus){var hd=document.getElementById("st"+i);hd.setAttribute("tabindex","-1");hd.focus({preventScroll:true});document.getElementById("stepper").scrollIntoView({block:"start"});}}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-go]");if(b)go(+b.getAttribute("data-go"),true);});
+document.addEventListener("input",function(e){var k=e.target.getAttribute&&e.target.getAttribute("data-key");if(!k)return;state.a[k]=e.target.value;save();});
+document.querySelectorAll("input[data-key]").forEach(function(el){el.value=state.a[el.getAttribute("data-key")]||"";});
+render();
 
-  function openDoc(index) {
-    document.querySelectorAll('.doc-item').forEach((el, i) => {
-      el.classList.toggle('active', i === index);
-    });
-    currentIndex = index;
-    const doc = DOCUMENTS[index];
-
-    document.getElementById('viewer-bar').style.display          = 'flex';
-    document.getElementById('viewer-doc-title').textContent      = doc.title;
-    document.getElementById('viewer-placeholder').style.display  = 'none';
-
-    const frame     = document.getElementById('viewer-frame');
-    frame.src       = PDF_FOLDER + doc.file;
-    frame.style.display = 'block';
-  }
-
-  function openCurrent() {
-    if (currentIndex === null) return;
-    window.open(PDF_FOLDER + DOCUMENTS[currentIndex].file, '_blank');
-  }
-
-  buildList();
+function gather(){
+  var t=typeById(state.type),L=["PRIMARY SOURCE PALOOZA!","Source type: "+(t?t[1]:"(not chosen)"),""];
+  [["f-title","Title or description"],["f-creator","Creator"],["f-date","Date"],["f-where","Where I found it"]].forEach(function(f){L.push(f[1]+": "+(state.a[f[0]]||""));});
+  SPINE.forEach(function(s,i){
+    L.push("","== "+(i+1)+". "+s.t.toUpperCase()+" ==");
+    var qs=s.q.map(function(q,j){return[strip(q),"s"+i+"q"+j];});
+    if(t)t[2].filter(function(x){return x[0]===i;}).forEach(function(x,k){qs.push([x[1],t[0]+"-"+i+"-"+k]);});
+    qs.forEach(function(q){L.push("","Q: "+q[0],"A: "+((state.a[q[1]]||"").trim()||"(no answer)"));});
+  });
+  return L.join("\n");
+}
+document.getElementById("copyBtn").addEventListener("click",function(){
+  var txt=gather(),h=document.createElement("textarea");h.value=txt;h.setAttribute("readonly","");h.style.position="fixed";h.style.top="-1000px";document.body.appendChild(h);h.select();
+  var ok=false;try{ok=document.execCommand("copy");}catch(e){}document.body.removeChild(h);
+  var fb=document.getElementById("copyFallback");
+  if(ok){fb.style.display="none";status.textContent="Copied! Paste your answers into a document.";return;}
+  var ta=document.getElementById("copyText");fb.style.display="block";ta.value=txt;ta.focus();ta.select();status.textContent="Press Ctrl+C (or Cmd+C) to copy.";
+});
+function fillPrint(){document.querySelectorAll(".q").forEach(function(q){var f=q.querySelector("textarea,input"),p=q.querySelector(".print-ans");if(f&&p)p.textContent=f.value;});}
+window.addEventListener("beforeprint",fillPrint);
+document.getElementById("printBtn").addEventListener("click",function(){fillPrint();window.print();});
+var armed=false;
+document.getElementById("clearBtn").addEventListener("click",function(){
+  if(!armed){armed=true;status.textContent="Press Start over again to erase every answer.";setTimeout(function(){armed=false;},5000);return;}
+  armed=false;state={type:null,a:{}};persist();document.querySelectorAll("input[data-key]").forEach(function(el){el.value="";});render();status.textContent="Cleared.";
+});
+})();
+(function(){
+var d=document.documentElement,K={size:"lyceum-size",theme:"lyceum-theme",font:"lyceum-font"};
+function sync(){document.querySelectorAll(".a11y-group .opts").forEach(function(g){var dim=g.getAttribute("data-dim");g.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(d.dataset[dim]===b.getAttribute("data-v")));});});}
+document.querySelectorAll(".a11y-group button").forEach(function(b){b.addEventListener("click",function(){var dim=b.parentNode.getAttribute("data-dim"),v=b.getAttribute("data-v");d.dataset[dim]=v;try{localStorage.setItem(K[dim],v);}catch(e){}sync();});});
+var t=document.querySelector(".a11y-toggle"),p=document.getElementById("a11y-panel");
+t.addEventListener("click",function(){p.hidden=!p.hidden;t.setAttribute("aria-expanded",String(!p.hidden));if(!p.hidden)p.querySelector("button").focus();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){p.hidden=true;t.setAttribute("aria-expanded","false");t.focus();}});
+sync();
+})();
 </script>
 </body>
 </html>

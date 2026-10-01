@@ -1,0 +1,14 @@
+{
+  "lyceum": 1,
+  "title": "Primary Source Palooza!",
+  "description": "Your Guide to Working with Primary Sources",
+  "url": "https://mistertlibrary.github.io/primarysourcepalooza/",
+  "series": "",
+  "course": "",
+  "subjects": [],
+  "sections": [
+    { "title": "Choose a Source!", "anchor": "#picker-title", "keywords": [] },
+    { "title": "My Source!", "anchor": "#mysource-title", "keywords": [] },
+    { "title": "Analysis!", "anchor": "#analysis-title", "keywords": [] }
+  ]
+}
