@@ -90,14 +90,17 @@ header.hero h1{font-size:clamp(2.3rem,8vw,4.8rem);font-weight:900;margin:.2em 0 
 .confetti span:nth-child(5){background:var(--s5);transform:rotate(-6deg)}.confetti span:nth-child(6){background:var(--s6);transform:rotate(4deg)}
 
 .hero{position:relative;max-width:1000px;margin:0 auto}
-.marg{position:absolute;color:var(--accent);pointer-events:none}
+.has-marg{position:relative}
+.marg{position:absolute;pointer-events:none;color:var(--accent);display:none}
 .marg svg{display:block}
-.m-hand{left:2%;top:46%;transform:rotate(-6deg)}
-.m-nb{right:4%;top:22%;font-family:var(--display);font-style:italic;font-weight:500;font-size:1.5rem;transform:rotate(9deg);color:var(--s5)}
-.m-star{right:9%;top:62%;color:var(--s3)}
-.m-brace{left:6%;top:16%;color:var(--s6)}
-.m-squig{display:block;margin:-.2rem auto 0;color:var(--accent)}
-@media (max-width:760px){.m-hand,.m-nb,.m-star,.m-brace{display:none}}
+@media (min-width:1240px){.marg{display:block}}
+.m-hand{left:-118px;top:42%;transform:rotate(-8deg)}
+.m-brace{left:-56px;top:150px;color:var(--s6)}
+.m-star{right:-70px;top:120px;color:#8a6a00}
+:root[data-theme="dark"] .m-star{color:var(--s3)}
+.m-nb{right:-96px;top:150px;font-family:var(--display);font-style:italic;font-weight:500;font-size:1.6rem;transform:rotate(10deg);color:var(--s5)}
+.m-squig{left:-60px;top:240px}
+:root[data-theme="contrast"] .marg{color:var(--accent)!important}
 .stepper{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;list-style:none;padding:0;margin:0 0 .4rem}
 .stepper button{width:100%;height:100%;padding:.5rem .3rem;border:2px solid var(--ink);border-radius:10px;background:var(--t);color:var(--ink);cursor:pointer;font-family:var(--display);font-weight:700;font-size:.82rem;line-height:1.15;box-shadow:3px 3px 0 var(--shadow-col)}
 .stepper .n{display:block;font-family:var(--mono);font-size:.95rem}
@@ -115,7 +118,7 @@ section h2{font-size:clamp(1.8rem,5vw,2.7rem);font-weight:800;margin:0 0 .3rem}
   background:var(--card);color:var(--ink);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--shadow-col);
   font-family:var(--display);font-weight:700;font-size:.95rem;line-height:1.2;cursor:pointer;transition:transform .08s ease}
 .picker button svg{width:34px;height:34px;color:var(--c)}
-:root:not([data-theme="dark"]):not([data-theme="contrast"]) .picker li:nth-child(6n+3) button:not([aria-pressed="true"]) svg,:root:not([data-theme="dark"]):not([data-theme="contrast"]) .m-star{color:#8a6a00}
+:root:not([data-theme="dark"]):not([data-theme="contrast"]) .picker li:nth-child(6n+3) button:not([aria-pressed="true"]) svg{color:#8a6a00}
 .picker li:nth-child(6n+1) button{--c:var(--s1);--t:var(--t1);--o:var(--o1)}.picker li:nth-child(6n+2) button{--c:var(--s2);--t:var(--t2);--o:var(--o2)}
 .picker li:nth-child(6n+3) button{--c:var(--s3);--t:var(--t3);--o:var(--o3)}.picker li:nth-child(6n+4) button{--c:var(--s4);--t:var(--t4);--o:var(--o4)}
 .picker li:nth-child(6n+5) button{--c:var(--s5);--t:var(--t5);--o:var(--o5)}.picker li:nth-child(6n+6) button{--c:var(--s6);--t:var(--t6);--o:var(--o6)}
@@ -190,25 +193,22 @@ footer{text-align:center;margin-top:2rem}
 <div class="topbar"><a href="/librarylyceum/guides.html">WEHS Library Lyceum</a> research guides presents...</div>
 
 <header class="hero">
-  <span class="marg m-brace" aria-hidden="true"><svg width="26" height="110" viewBox="0 0 26 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 4c-10 0-10 6-10 20s0 22-8 31c8 9 8 17 8 31s0 20 10 20"/></svg></span>
-  <span class="marg m-nb" aria-hidden="true">N.B.</span>
-  <span class="marg m-hand" aria-hidden="true"><svg width="74" height="40" viewBox="0 0 74 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h14c4 0 6-3 9-6s7-4 9-1-2 6-2 6h36c3 0 4 4 0 4H42"/><path d="M42 17h6c3 0 3 4 0 4h-6M42 21h5c3 0 3 4 0 4h-5M42 25h4c3 0 3 4 0 4H24c-5 0-8-4-8-8v-5"/><path d="M2 14v16h14"/></svg></span>
-  <span class="marg m-star" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M17 3v28M5 10l24 14M29 10L5 24"/></svg></span>
   <div class="kicker">A Library Research Guide</div>
   <h1>Primary Source Palooza<span class="bang">!</span></h1>
   <p class="lead">Your Guide to Working with Primary Sources</p>
-  <svg class="m-squig" width="220" height="14" viewBox="0 0 220 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8c12-8 22 6 34 0s22-6 34 0 22 6 34 0 22-6 34 0 22 6 34 0 22-6 34 0"/></svg>
   <div class="confetti" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 </header>
 
 <main id="main"><div class="wrap">
 
-<section id="picker-section" aria-labelledby="picker-title">
+<section id="picker-section" class="has-marg" aria-labelledby="picker-title">
+  <span class="marg m-hand" aria-hidden="true"><svg width="74" height="40" viewBox="0 0 74 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h14c4 0 6-3 9-6s7-4 9-1-2 6-2 6h36c3 0 4 4 0 4H42"/><path d="M42 17h6c3 0 3 4 0 4h-6M42 21h5c3 0 3 4 0 4h-5M42 25h4c3 0 3 4 0 4H24c-5 0-8-4-8-8v-5"/><path d="M2 14v16h14"/></svg></span>
   <h2 id="picker-title">Choose a Source!</h2>
   <ul class="picker" id="picker"></ul>
 </section>
 
-<section aria-labelledby="mysource-title">
+<section class="has-marg" aria-labelledby="mysource-title">
+  <span class="marg m-brace" aria-hidden="true"><svg width="26" height="110" viewBox="0 0 26 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 4c-10 0-10 6-10 20s0 22-8 31c8 9 8 17 8 31s0 20 10 20"/></svg></span><span class="marg m-star" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M17 3v28M5 10l24 14M29 10L5 24"/></svg></span>
   <h2 id="mysource-title">My Source!</h2>
   <div class="panel">
     <div class="fields">
@@ -221,7 +221,8 @@ footer{text-align:center;margin-top:2rem}
   </div>
 </section>
 
-<section aria-labelledby="analysis-title">
+<section class="has-marg" aria-labelledby="analysis-title">
+  <span class="marg m-nb" aria-hidden="true">N.B.</span><span class="marg m-squig" aria-hidden="true"><svg width="16" height="240" viewBox="0 0 16 240" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M8 4c-8 12 8 22 0 34s8 22 0 34 8 22 0 34-8 22 0 34 8 22 0 34-8 22 0 34"/></svg></span>
   <h2 id="analysis-title">Analysis!</h2>
   <ol class="stepper" id="stepper" aria-label="Stages"></ol>
   <div id="stages"></div>
